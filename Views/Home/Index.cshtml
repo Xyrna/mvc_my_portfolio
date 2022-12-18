@@ -1,0 +1,32 @@
+﻿@using Bio.Models.EntityFramework
+@model List<Orders>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<a class="btn btn-primary" href="/Home/Yeni">Yeni Istifadeci</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.OrderID</td>
+                <td>@item.ShipName</td>
+
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>

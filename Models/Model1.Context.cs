@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bio.Models.EntityFramework
+namespace Bio.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NorthwindEntities : DbContext
+    public partial class NorthwindEntities1 : DbContext
     {
-        public NorthwindEntities()
-            : base("name=NorthwindEntities")
+        public NorthwindEntities1()
+            : base("name=NorthwindEntities1")
         {
         }
     
@@ -25,7 +25,6 @@ namespace Bio.Models.EntityFramework
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Order_Details> Order_Details { get; set; }
-        public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<ToDo> ToDo { get; set; }
     }
 }

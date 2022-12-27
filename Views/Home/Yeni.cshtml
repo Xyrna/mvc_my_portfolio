@@ -1,18 +1,49 @@
-﻿
+﻿@model Bio.Models.ToDo
 @{
     ViewBag.Title = "Yeni";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
 
-<div class="container">
-    <h2>Yeni</h2>
+    html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        font-family: 'Comic Sans MS';
+    }
 
-    <form method="post">
-        <div class="form-group mb-3">
-            <label>Yeni istifadeci adi</label>
-            <input type="text" name="OrderID" class="form-control" />
+    .center-y {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
+    .center-x {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+</style>
+
+<div class="center-y">
+    <div class="center-x">
+        <div class="form-group" style="max-width: 500px; margin: auto">
+
+
+
+
+            @using (Html.BeginForm("Yeni", "Home", FormMethod.Post))
+            {
+                @Html.LabelFor(m => m.TaskName, "Task name:")
+                @Html.TextBoxFor(m => m.TaskName, new { @class = "form-control", @required = true })
+                @Html.HiddenFor(m => m.ID)
+                <button type="submit" class="btn mt-3 btn-success ml-auto mr-auto">Enter</button>
+            }
         </div>
-        <button type="submit" class="btn btn-success">Elave et</button>
-    </form>
+    </div>
 </div>

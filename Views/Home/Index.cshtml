@@ -1,17 +1,29 @@
-﻿@using Bio.Models.EntityFramework
-@model List<Orders>
+﻿@using Bio.Models
+@model List<ToDo>
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-<a class="btn btn-primary" href="/Home/Yeni">Yeni Istifadeci</a>
-<table class="table">
+<style>
+
+
+html, body {
+            
+            font-family: 'Comic Sans MS';
+        }
+</style>
+
+<h2></h2>
+<table class="table" style="max-width: 500px; margin: auto">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Ad</th>
+
+            <th>Task</th>
+            <th></th>
+            <th> <a class="btn btn-primary" href="/Home/Yeni">New Task</a> </th>
+
+
         </tr>
 
     </thead>
@@ -20,8 +32,18 @@
         {
 
             <tr>
-                <td>@item.OrderID</td>
-                <td>@item.ShipName</td>
+
+                <td>@item.TaskName</td>
+                <td>
+                    <a class="btn" href="/Home/Update/@item.ID">
+                        <img style="max-height: 25px; max-width: 25px;" src="~/img/edit (1).png" />
+                    </a>
+                </td>
+                <td>
+                    <a class="btn" href="/Home/Delete/@item.ID">
+                        <img style="max-height: 25px; max-width: 25px;" src="~/img/remove.png" />
+                    </a>
+                </td>
 
 
             </tr>

@@ -7,19 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bio.Models.EntityFramework
+namespace Bio.Models.message
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Order_Details
+    public partial class replies
     {
-        public int OrderID { get; set; }
-        public int ProductID { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short Quantity { get; set; }
-        public float Discount { get; set; }
-    
-        public virtual Orders Orders { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Body { get; set; }
     }
 }
